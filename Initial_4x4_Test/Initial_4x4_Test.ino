@@ -20,11 +20,20 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+  // paint one LED per row. The HT16K33 internal memory looks like
+  // a 4x4 bit matrix (4 rows, 4 columns)
+  
+  for (uint8_t i=0; i<4; i++) {
+    // draw a diagonal row of pixels
+    matrix.displaybuffer[i] = _BV((counter+i) % 4) | _BV((counter+i+4) % 4) ;
+  }
   
   // write the changes we just made to the display
   matrix.writeDisplay();
-  
+  delay(100);
 
-
+  counter++;
+  if (counter >= 4) counter = 0;  
 
 }
