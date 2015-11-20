@@ -74,6 +74,7 @@ void loop() {
 //Custom Function Listing.
 
 //Function to map segment to LED.
+
 void PaintSegment(int seg){
 
 }
