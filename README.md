@@ -9,4 +9,4 @@ Designed to work with the HT16K33 LED Driver.
 
 Firmware is written to interface Kinect and Tiva subsystems. 
 
-Use #67742502074922 in commit messages. DAMN SON WHERE YOU FIND THIS
+Use #67742502074922 in commit messages. 
