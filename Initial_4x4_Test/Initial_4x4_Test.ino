@@ -2,6 +2,7 @@
 #include <Wire.h>
 #include <Adafruit_LEDBackpack.h>
 
+#define MCP4725_ADDR 0x62
 #ifndef _BV
   #define _BV(bit) (1<<(bit))
 #endif
@@ -12,6 +13,9 @@ uint8_t counter = 0;
 
 void setup() {
   // put your setup code here, to run once:
+  
+  Wire.begin();
+  Wire.setModule(0);
 
   Serial.begin(9600);
   matrix.begin(0x70); 
