@@ -386,21 +386,31 @@ void PaintSegment(int seg){
 }
 
 //Function to check if segment has already been hit. 
-void LEDFlash(int r, int c){
-  matrix.drawPixel(r,c, LED_ON);
-  matrix.writeDisplay();
-  delay(100);
-  matrix.drawPixel(r,c, LED_OFF);
-  matrix.writeDisplay();
-  delay(100);
-  matrix.drawPixel(r,c, LED_ON);
-  matrix.writeDisplay();
-  delay(100);
-  matrix.drawPixel(r,c, LED_OFF);
-  matrix.writeDisplay();
-  delay(100);
-  matrix.drawPixel(r,c, LED_ON); //after blinking twice stays on
-  matrix.writeDisplay();
+void LEDFlash(int r, int c)
+
+    matrix.clear();
+    //Detect data coming in from Kinect. This could be enclosed in a "ready" conditional.
+
+    matrix.drawPixel(r,c, LED_ON);
+    matrix.writeDisplay();
+    delay(400);
+  
+    matrix.drawPixel(r,c, LED_OFF);
+    matrix.writeDisplay();
+    delay(400);
+   
+    matrix.drawPixel(r,c, LED_ON);
+    matrix.writeDisplay();
+    delay(400);
+
+    matrix.drawPixel(r,c, LED_OFF);
+    matrix.writeDisplay();
+    delay(400);
+
+    matrix.drawPixel(r,c, LED_ON);
+    matrix.writeDisplay();
+    
+   
 }
 
 //Subroutine to indicate to the user that they can throw dart. i.e Light up all LED 2 times. etc.
