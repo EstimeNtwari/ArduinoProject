@@ -2,7 +2,7 @@
 /*  
     matrix.displaybuffer[i] : directly access display buffer. check if node has been hit.
     matrix.drawPixel() : draw to a pixel.
-    matrix.drawBitmap(0, 0,  mybitmap, 16, 32, LED_ON); outputs "mybmp" to buffer
+    matrix.drawBitmap(0, 0,  mybitmap, 8, 16, LED_ON); outputs "mybmp" to buffer
     matrix.drawLine(0,0, 7,15, Mat1); 
 
   //INITIALLIZING BUFFER
@@ -32,8 +32,22 @@
 
 Adafruit_8x16matrix matrix = Adafruit_8x16matrix();  //specify your display buffer
 
-int dart_counter;
-int player; //potential multiplayer support.
+int dart_count[2];
+int player[2]; //potential multiplayer support.
+
+
+ static const uint8_t PROGMEM
+      All_ON[] =
+      { B11111111,
+        B11111111,
+        B11111111,
+        B11111111,
+        B11111111,
+        B11111111,
+        B11111111,
+        B11111111 };
+  
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -41,47 +55,56 @@ void setup() {
   Serial.begin(9600);
   matrix.begin(0x70); //go to first matrix
   dart_count=0; 
+  player[0]=0;
+  player[1]=0;
 
 }
 
 void loop() {
 
-  if(dart_count<=2){ //
-
     //Detect data coming in from Kinect. This could be enclosed in a "ready" conditional.
-    if(Serial.available()){
-      int sengment= Serial.read();  //retreive location of incoming dart. set 0 for miss
-    }
-    switch (segment){
+  if(Serial.available()){
+    int seg= Serial.read();  //retreive location of incoming dart. set 0 for miss
 
-      //case i
-      //matrix.drawPixel(i,j, LED_ON); //write to segment i
-      //enumerate segments. and write to buffer.
-
-    }
-
-    //write buffer to Dartboard LEDs. 
-    matrix.writeDisplay();
+    if(seg<130 && dart_count<3){
+      PaintSegment(seg);
+      dart_count++;
     }else{
-      //clear Dartboard
-      matrix.clear();
+      //turns are over reset the game board. 
       
     }
-    
+
+  }
+   
 
 }
 
-//Custom Function Listing.
+//----------------------------------FunctionListing---------------------------------------
+
+
 
 //Function to map segment to LED.
 
 void PaintSegment(int seg){
 
+  if(CheckSegment(seg)){
+    //paint segment
+
+  }
+  else{
+    //reflash segment
+
+  }
 }
 
 //Function to check if segment has already been hit. 
 bool CheckSegment(int seg){
+  
+  if(matrix.displaybuffer[seg]){
+    return true;
+  }
 
+  return false;
 }
 
 //Subroutine to indicate to the user that they can throw dart. i.e Light up all LED 2 times. etc.
@@ -90,8 +113,14 @@ void ShowReady(){
 }
 
 //Function to animate clearing of screen. 
-void AnimateClear(){
+void Clear(){
+  
+  matrix.clear();      // clear display
+  matrix.drawPixel(0, 0, LED_ON);  
+  matrix.writeDisplay();  // write the changes we just made to the display
 
 }
+
+
 
 
