@@ -1,9 +1,9 @@
 //----------------------HOWTO----------------------------------------
-/*  
+/*
     matrix.displaybuffer[i] : directly access display buffer. check if node has been hit.
     matrix.drawPixel() : draw to a pixel.
     matrix.drawBitmap(0, 0,  mybitmap, 8, 16, LED_ON); outputs "mybmp" to buffer
-    matrix.drawLine(0,0, 7,15, Mat1); 
+    matrix.drawLine(0,0, 7,15, Mat1);
 
   //INITIALLIZING BUFFER
     static const uint16_t PROGMEM
@@ -16,9 +16,9 @@
         B1001100100111100,
         B0100001000111100,
         B0011110000111100 };
-  
-  
-   write the changes we just made to the display. display buffer to LED. 
+
+
+   write the changes we just made to the display. display buffer to LED.
    matrix.writeDisplay();
   */
 
@@ -33,7 +33,13 @@
 Adafruit_8x16matrix matrix = Adafruit_8x16matrix();  //specify your display buffer
 
 int dart_count[2];
-int player[2]; //potential multiplayer support.
+int player[2]; //potential multiplayer support. Will require
+
+ //more sophisticated player structure
+struct player{
+  int playerID;
+  int dartThrows;
+}player;
 
 
  static const uint8_t PROGMEM
@@ -46,7 +52,7 @@ int player[2]; //potential multiplayer support.
         B11111111,
         B11111111,
         B11111111 };
-  
+
 
 
 void setup() {
@@ -54,7 +60,7 @@ void setup() {
 
   Serial.begin(9600);
   matrix.begin(0x70); //go to first matrix
-  dart_count=0; 
+  dart_count=0;
   player[0]=0;
   player[1]=0;
 
@@ -70,12 +76,12 @@ void loop() {
       PaintSegment(seg);
       dart_count++;
     }else{
-      //turns are over reset the game board. 
-      
+      //turns are over reset the game board.
+
     }
 
   }
-   
+
 
 }
 
@@ -97,9 +103,9 @@ void PaintSegment(int seg){
   }
 }
 
-//Function to check if segment has already been hit. 
+//Function to check if segment has already been hit.
 bool CheckSegment(int seg){
-  
+
   if(matrix.displaybuffer[seg]){
     return true;
   }
@@ -112,15 +118,11 @@ void ShowReady(){
 
 }
 
-//Function to animate clearing of screen. 
+//Function to animate clearing of screen.
 void Clear(){
-  
+
   matrix.clear();      // clear display
-  matrix.drawPixel(0, 0, LED_ON);  
+  matrix.drawPixel(0, 0, LED_ON);
   matrix.writeDisplay();  // write the changes we just made to the display
 
 }
-
-
-
-
