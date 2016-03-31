@@ -28,16 +28,12 @@
 #include <Adafruit_GFX.h>
 #include <Wire.h>
 #include <Adafruit_LEDBackpack.h>
+#include <SoftwareSerial.h>
+
 
 
 Adafruit_8x16matrix matrix = Adafruit_8x16matrix();  //specify your display buffer
 
-struct player{ //player struct to be used for each player (multiplayer support)
-  int playerid;
-  int score;
-  int seg_hit[3]; //array to keep track of what segments have been light during a players turn
-};
-typedef struct player Player;
 
 void LEDFlash(int r, int c){
   matrix.drawPixel(r,c, LED_ON);
@@ -58,29 +54,24 @@ void LEDFlash(int r, int c){
 
 void LEDFlash2(int r, int c, int r1, int c1){
   matrix.drawPixel(r,c, LED_ON);
-  matrix.writeDisplay();
   matrix.drawPixel(r1,c1, LED_ON);
   matrix.writeDisplay();
   delay(100);
   matrix.drawPixel(r,c, LED_OFF);
-  matrix.writeDisplay();
   matrix.drawPixel(r1,c1, LED_OFF);
   matrix.writeDisplay();
   delay(100);
   matrix.drawPixel(r,c, LED_ON);
-  matrix.writeDisplay();
   matrix.drawPixel(r1,c1, LED_ON);
   matrix.writeDisplay();
   delay(100);
   matrix.drawPixel(r,c, LED_OFF);
-  matrix.writeDisplay();
   matrix.drawPixel(r1,c1, LED_OFF);
   matrix.writeDisplay();
   delay(100);
   //after blinking twice stays on
   matrix.drawPixel(r,c, LED_ON);
   matrix.drawPixel(r1,c1, LED_ON);
-  matrix.writeDisplay();
   matrix.writeDisplay();
 }
 void LEDFlash4(int r, int c, int r1, int c1, int r2, int c2, int r3, int c3){
@@ -421,7 +412,15 @@ void PaintSegment(int seg){
   
 }
 
+void cycleAround(){
+  for(int i=1; i<83; i++){
+      PaintSegment(i);
+      delay(10);
+    }  
+}
+
 //Function to check if segment has already been hit. 
+SoftwareSerial BT(10, 11);
 
 
 void setup() {
@@ -432,31 +431,38 @@ void setup() {
   matrix.begin(0x70); //go to first matrix
   matrix.setRotation(1); 
   matrix.setBrightness(15);
+  BT.begin(9600);
 
 }
 
 void loop() {
-    for(int i=1; i<83; i++){
-      PaintSegment(i);
-    delay(10);
-    }
-    //Detect data coming in from Kinect. This could be enclosed in a "ready" conditional.
-    //if(Serial.available()){
-      //int kinect_data=Serial.read();// retrieve data coming from kinect to determine what to do
-          //int segment=kinect_data;
-          //PaintSegment(segment);
-         // player1.seg_hit[i]=segment;
-        //  player1.score+=segment;
-      //}    
-    
 
+    //Process Data from Kinect
+    if(Serial.available()){
+      int kinect_data=Serial.read();
+      if(kinect_data<84 && kinect_data>0){
+        PaintSegment(kinect_data);
+        BT.write(2); //RESERVED KEYWORD FOR BEGIN SEGMENT TRANSMISSION
+        BT.write(kinect_data); //SEND TARGET SEGMENT. 
+        BT.write(3); //RESERVED KEYWORD FOR END OF SEGMENT TANSMISSION
+      }
+    }
     
+    //Process Data From App
+    if(BT.available()){
+      int android_data=Serial.read();
+      if(android_data<16 && android_data>=0){
+        matrix.setBrightness(android_data);
+        PaintSegment(android_data); ////////////THIS LINE IS FOR TESTING
+      }
+      if(android_data==20){ //clear screen command
+        matrix.clear();
+        matrix.writeDisplay();
+      }
+    }
 
 }
 
-//Custom Function Listing.
-
-//Function to map segment to LED.
 
 
 
