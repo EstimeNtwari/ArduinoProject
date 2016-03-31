@@ -7,7 +7,7 @@
   #define _BV(bit) (1<<(bit))
 #endif
 
-Adafruit_8x8matrix matrix = Adafruit_8x8matrix();
+Adafruit_8x16matrix matrix = Adafruit_8x16matrix();
 
 uint8_t counter = 0;
 
@@ -15,12 +15,12 @@ void setup() {
   // put your setup code here, to run once:
   
   Wire.begin();
-  Wire.setModule(0);
+
 
   Serial.begin(9600);
   matrix.begin(0x70); 
   matrix.setRotation(1); 
-  matrix.setBrightness(1);
+  matrix.setBrightness(15);
 
 
 }
@@ -43,9 +43,8 @@ void loop() {
 //      }
 //  }
     //matrix.clear;
-
-  for(int i=0; i<8; i++){
-    for(int j=0; j<8; j++){
+  for(int i=0; i<16; i++){
+    for(int j=0; j<16; j++){
       matrix.drawPixel(i,j, LED_ON);
       delay(100);
       matrix.writeDisplay();
