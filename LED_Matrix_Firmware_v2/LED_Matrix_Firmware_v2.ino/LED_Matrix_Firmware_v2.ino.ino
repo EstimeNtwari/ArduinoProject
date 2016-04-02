@@ -180,84 +180,65 @@ void PaintSegment(int seg){
     LEDFlash(4,0);
   }
   else if(seg==62){
-    LEDFlash(5,6);
-    LEDFlash(6,6);
+    LEDFlash2(5,6,6,6);
   }
   else if(seg==61){
     LEDFlash(2,7);
     LEDFlash(3,7);
   }
   else if(seg==60){
-    LEDFlash(15,7);
-    LEDFlash(13,7);
+    LEDFlash2(15,7,13,7);
   }
   else if(seg==59){
-    LEDFlash(14,6);
-    LEDFlash(14,7);
+    LEDFlash2(14,6,14,7);
   }
   else if(seg==58){
-    LEDFlash(12,6);
-    LEDFlash(12,5);
+    LEDFlash2(12,6,12,5);
   }
   else if(seg==57){
-    LEDFlash(12,1);
-    LEDFlash(12,2);
+    LEDFlash2(12,1,12,2);
   }
   else if(seg==56){
-    LEDFlash(14,1);
-    LEDFlash(14,0);
+    LEDFlash2(14,1,14,0);
   }
   else if(seg==55){
-    LEDFlash(15,0);
-    LEDFlash(13,0);
+    LEDFlash2(15,0,13,0);
   }
   else if(seg==54){
-    LEDFlash(11,1);
-    LEDFlash(0,1);
+    LEDFlash2(11,1,0,1);
   }
   else if(seg==53){
-    LEDFlash(2,0);
-    LEDFlash(3,0);
+    LEDFlash2(2,0,3,0);
   }
   else if(seg==52){
-    LEDFlash(7,0);
-    LEDFlash(8,0);
+    LEDFlash2(7,0,8,0);
   }
   else if(seg==51){
-    LEDFlash(9,1);
-    LEDFlash(9,0);
+    LEDFlash2(9,1,9,0);
   }
   else if(seg==50){
-    LEDFlash(10,2);
-    LEDFlash(10,1);
+    LEDFlash2(10,2,10,1);
   }
   else if(seg==49){
-    LEDFlash(10,6);
-    LEDFlash(10,5);
+    LEDFlash2(10,6,10,5);
   }
   else if(seg==48){
-    LEDFlash(5,1);
-    LEDFlash(6,1);
+    LEDFlash2(5,1,6,1);
   }
   else if(seg==47){
-    LEDFlash(1,1);
-    LEDFlash(4,1);
+    LEDFlash2(1,1,4,1);
   }
   else if(seg==46){
-    LEDFlash(11,6);
-    LEDFlash(0,6);
+    LEDFlash2(11,6,0,6);
   }
   else if(seg==45){
-    LEDFlash(4,6);
-    LEDFlash(1,6);
+    LEDFlash2(4,6,1,6);
   }
   else if(seg==44){
-    LEDFlash(9,7);
-    LEDFlash(9,6);
+    LEDFlash2(9,7,9,6);
   }
   else if(seg==43){
-    LEDFlash(7,7);
-    LEDFlash(8,7);
+    LEDFlash2(7,7,8,7);
   }
   else if(seg==42){
     LEDFlash(2,6);
@@ -320,91 +301,67 @@ void PaintSegment(int seg){
     LEDFlash(3,6);
   }
   else if(seg==22){
-    LEDFlash(0,5);
-    LEDFlash(0,4);
+    LEDFlash2(0,5,0,4);
   }
   else if(seg==21){
-    LEDFlash(11,5);
-    LEDFlash(11,4);
+    LEDFlash2(11,5,11,4);
   }
   else if(seg==20){
-    LEDFlash(15,5);
-    LEDFlash(15,4);
+    LEDFlash2(15,5,15,4);
   }
   else if(seg==19){
-    LEDFlash(13,5);
-    LEDFlash(13,4);
+    LEDFlash2(13,5,13,4);
   }
   else if(seg==18){
-    LEDFlash(13,2);
-    LEDFlash(13,3);
+    LEDFlash2(13,2,13,3);
   }
   else if(seg==17){
-    LEDFlash(15,2);
-    LEDFlash(15,3);
+    LEDFlash2(15,2,15,3);
   }
   else if(seg==16){
-    LEDFlash(11,2);
-    LEDFlash(11,3);
+    LEDFlash2(11,2,11,3);
   }
   else if(seg==15){
-    LEDFlash(0,2);
-    LEDFlash(0,3);
+    LEDFlash2(0,2,0,3);
   }
   else if(seg==14){
-    LEDFlash(1,2);
-    LEDFlash(2,2);
+    LEDFlash2(1,2,2,2);
   }
   else if(seg==13){
-    LEDFlash(7,3);
-    LEDFlash(7,2);
+    LEDFlash2(7,3,7,2);
   }
   else if(seg==12){
-    LEDFlash(8,3);
-    LEDFlash(8,2);
+    LEDFlash2(8,3,8,2);
   }
   else if(seg==11){
-    LEDFlash(8,5);
-    LEDFlash(8,4);
+    LEDFlash2(8,5,8,4);
   }
   else if(seg==10){
-    LEDFlash(4,2);
-    LEDFlash(3,2);
+    LEDFlash2(4,2,3,2);
   }
   else if(seg==9){
-    LEDFlash(7,5);
-    LEDFlash(7,4);
+    LEDFlash2(7,5,7,4);
   }
   else if(seg==8){
-    LEDFlash(6,3);
-    LEDFlash(6,2);
+    LEDFlash2(6,3,6,2);
   }
   else if(seg==7){
-    LEDFlash(6,5);
-    LEDFlash(6,4);
+    LEDFlash2(6,5,6,4);
   }
   else if(seg==6){
-    LEDFlash(5,2);
-    LEDFlash(5,3);
+    LEDFlash2(5,2,5,3);
   }
   else if(seg==5){
-    LEDFlash(5,4);
-    LEDFlash(5,5);
+    LEDFlash2(5,4,5,5);
   }
   else if(seg==4){
-    LEDFlash(3,5);
-    LEDFlash(4,5);
+    LEDFlash2(3,5,4,5);
   }
   else if(seg==3){
     LEDFlash2(1,5,2,5);
-//    LEDFlash(1,5);
-//    LEDFlash(2,5);
   }
   else if(seg==2){
-    LEDFlash(1,3);
-    LEDFlash(1,4);
-    LEDFlash(4,4);
-    LEDFlash(4,3);
+    LEDFlash4(1,3,1,4,4,4,4,3);
   }
   else if(seg==1){ //equivalent to segment 0
     LEDFlash(2,4);
