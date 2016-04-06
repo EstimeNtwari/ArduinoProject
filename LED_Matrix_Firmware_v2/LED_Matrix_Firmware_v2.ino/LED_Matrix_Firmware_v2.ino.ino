@@ -119,242 +119,241 @@ for(int i=1; i<83; i++){
 }
 
 void PaintSegment(int seg){
-  if(seg==82){
+  if(seg==64){
     LEDFlash(5,7);
   }
-  else if(seg==81){
+  else if(seg==65){
     LEDFlash(1,0);
   }
-  else if(seg==80){
+  else if(seg==66){
     LEDFlash(11,0);
   }
-  else if(seg==79){
+  else if(seg==67){
     LEDFlash(12,0);
   }
-  else if(seg==78){
+  else if(seg==68){
     LEDFlash(12,7);
   }
-  else if(seg==77){
+  else if(seg==69){
     LEDFlash(12,4);
   }
-  else if(seg==76){
+  else if(seg==70){
     LEDFlash(12,3);
   }
-  else if(seg==75){
+  else if(seg==71){
     LEDFlash(0,0);
   }
-  else if(seg==74){
+  else if(seg==72){
     LEDFlash(11,7);
   }
   else if(seg==73){
     LEDFlash(5,0);
   }
-  else if(seg==72){
+  else if(seg==74){
     LEDFlash(6,0);
   }
-   else if(seg==71){
+   else if(seg==75){
     LEDFlash(10,3);
   }
-   else if(seg==70){
+   else if(seg==76){
     LEDFlash(10,4);
   }
-   else if(seg==69){
+   else if(seg==77){
     LEDFlash(10,7);
   }
-  else if(seg==68){
+  else if(seg==78){
     LEDFlash(10,0);
   }
-  else if(seg==67){
+  else if(seg==79){
     LEDFlash(4,7);
   }
-  else if(seg==66){
+  else if(seg==80){
     LEDFlash(0,7);
   }
-  else if(seg==65){
+  else if(seg==81){
     LEDFlash(1,7);
   }
-  else if(seg==64){
+  else if(seg==82){
     LEDFlash(6,7);
   }
   else if(seg==63){
     LEDFlash(4,0);
   }
-  else if(seg==62){
+  else if(seg==44){
     LEDFlash2(5,6,6,6);
   }
-  else if(seg==61){
-    LEDFlash(2,7);
-    LEDFlash(3,7);
+  else if(seg==45){
+    LEDFlash2(2,7,3,7);
   }
-  else if(seg==60){
+  else if(seg==46){
     LEDFlash2(15,7,13,7);
   }
-  else if(seg==59){
+  else if(seg==47){
     LEDFlash2(14,6,14,7);
   }
-  else if(seg==58){
+  else if(seg==48){
     LEDFlash2(12,6,12,5);
   }
-  else if(seg==57){
+  else if(seg==49){
     LEDFlash2(12,1,12,2);
   }
-  else if(seg==56){
+  else if(seg==50){
     LEDFlash2(14,1,14,0);
   }
-  else if(seg==55){
+  else if(seg==51){
     LEDFlash2(15,0,13,0);
   }
-  else if(seg==54){
+  else if(seg==52){
     LEDFlash2(11,1,0,1);
   }
   else if(seg==53){
     LEDFlash2(2,0,3,0);
   }
-  else if(seg==52){
+  else if(seg==54){
     LEDFlash2(7,0,8,0);
   }
-  else if(seg==51){
+  else if(seg==55){
     LEDFlash2(9,1,9,0);
   }
-  else if(seg==50){
+  else if(seg==56){
     LEDFlash2(10,2,10,1);
   }
-  else if(seg==49){
+  else if(seg==57){
     LEDFlash2(10,6,10,5);
   }
-  else if(seg==48){
+  else if(seg==58){
     LEDFlash2(5,1,6,1);
   }
-  else if(seg==47){
+  else if(seg==59){
     LEDFlash2(1,1,4,1);
   }
-  else if(seg==46){
+  else if(seg==60){
     LEDFlash2(11,6,0,6);
   }
-  else if(seg==45){
+  else if(seg==61){
     LEDFlash2(4,6,1,6);
   }
-  else if(seg==44){
+  else if(seg==62){
     LEDFlash2(9,7,9,6);
   }
   else if(seg==43){
     LEDFlash2(7,7,8,7);
   }
-  else if(seg==42){
+  else if(seg==24){
     LEDFlash(2,6);
   }
-  else if(seg==41){
+  else if(seg==25){
     LEDFlash(14,4);
   }
-  else if(seg==40){
+  else if(seg==26){
     LEDFlash(14,3);
   }
-  else if(seg==39){
+  else if(seg==27){
     LEDFlash(14,2);
   }
-  else if(seg==38){
+  else if(seg==28){
     LEDFlash(13,1);
   }
-  else if(seg==37){
+  else if(seg==29){
     LEDFlash(15,1);
   }
-  else if(seg==36){
+  else if(seg==30){
     LEDFlash(14,5);
   }
-  else if(seg==35){
+  else if(seg==31){
     LEDFlash(9,2);
   }
-  else if(seg==34){
+  else if(seg==32){
     LEDFlash(9,3);
   }
   else if(seg==33){
     LEDFlash(9,4);
   }
-  else if(seg==32){
+  else if(seg==34){
     LEDFlash(9,5);
   }
-  else if(seg==31){
+  else if(seg==35){
     LEDFlash(8,6);
   }
-  else if(seg==30){
+  else if(seg==36){
     LEDFlash(8,1);
   }
-  else if(seg==29){
+  else if(seg==37){
     LEDFlash(7,6);
   }
-  else if(seg==28){
+  else if(seg==38){
     LEDFlash(7,1);
   }
-  else if(seg==27){
+  else if(seg==39){
     LEDFlash(15,6);
   }
-  else if(seg==26){
+  else if(seg==40){
     LEDFlash(13,6);
   }
-  else if(seg==25){
+  else if(seg==41){
     LEDFlash(2,1);
   }
-  else if(seg==24){
+  else if(seg==42){
     LEDFlash(3,1);
   }
   else if(seg==23){
     LEDFlash(3,6);
   }
-  else if(seg==22){
+  else if(seg==4){
     LEDFlash2(0,5,0,4);
   }
-  else if(seg==21){
+  else if(seg==5){
     LEDFlash2(11,5,11,4);
   }
-  else if(seg==20){
+  else if(seg==6){
     LEDFlash2(15,5,15,4);
   }
-  else if(seg==19){
+  else if(seg==7){
     LEDFlash2(13,5,13,4);
   }
-  else if(seg==18){
+  else if(seg==8){
     LEDFlash2(13,2,13,3);
   }
-  else if(seg==17){
+  else if(seg==9){
     LEDFlash2(15,2,15,3);
   }
-  else if(seg==16){
+  else if(seg==10){
     LEDFlash2(11,2,11,3);
   }
-  else if(seg==15){
+  else if(seg==11){
     LEDFlash2(0,2,0,3);
   }
-  else if(seg==14){
+  else if(seg==12){
     LEDFlash2(1,2,2,2);
   }
   else if(seg==13){
     LEDFlash2(7,3,7,2);
   }
-  else if(seg==12){
+  else if(seg==14){
     LEDFlash2(8,3,8,2);
   }
-  else if(seg==11){
+  else if(seg==15){
     LEDFlash2(8,5,8,4);
   }
-  else if(seg==10){
+  else if(seg==16){
     LEDFlash2(4,2,3,2);
   }
-  else if(seg==9){
+  else if(seg==17){
     LEDFlash2(7,5,7,4);
   }
-  else if(seg==8){
+  else if(seg==18){
     LEDFlash2(6,3,6,2);
   }
-  else if(seg==7){
+  else if(seg==19){
     LEDFlash2(6,5,6,4);
   }
-  else if(seg==6){
+  else if(seg==20){
     LEDFlash2(5,2,5,3);
   }
-  else if(seg==5){
+  else if(seg==21){
     LEDFlash2(5,4,5,5);
   }
-  else if(seg==4){
+  else if(seg==22){
     LEDFlash2(3,5,4,5);
   }
   else if(seg==3){
